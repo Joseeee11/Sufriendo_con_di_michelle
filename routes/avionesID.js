@@ -4,7 +4,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {     // http://localhost:3000/avionesID/*ID DE LO QUE SE BUSCA*
-    res.send(Aviones[req.params.id])
+    if(Aviones[req.params.id]){
+        res.send(Aviones[req.params.id])
+    }else {
+        res.end('ESE AVION NO SE ENCUENTRA')
+    }
+    
 
 
 //     res.send((req,res)=>{
