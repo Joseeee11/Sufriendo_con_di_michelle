@@ -1,50 +1,30 @@
 var express = require('express');
 var router = express.Router();
-
-var aviones = [
-  {
-    "id": 1,
-    "modelo": "luz",
-    "marca": 'amity',
-  },
-  {
-    "id": 2,
-    "modelo":'macarena',
-    "marca": 'xd',
-  },
-  {
-    "id": 3,
-    "modelo": 'chinito',
-    "marca": 'galko',
-  }
-];
+const infoAviones = require('./infoAviones.js')
 
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send(aviones);
+  res.send(infoAviones);
 });
+//dimichele
 router.get('/:id', function(req, res, next) {
-  var locura = Object.values(aviones);
+  res.end(infoAviones[req.params.id]);
+});
+router.get('/porId/:id', function(req, res, next) {
   var avion = {};
-  for (let i = 0; i < locura.length; i++) {
-    if (req.params.id = locura[i]) {
-      avion = locura[i];
-      i++
-    }
-    res.send(avion).status(404);  
-  }
+  infoAviones.forEach(e => {
+    if (req.params.id == e.id) {
+      avion = e;
+    };
+  });
+  res.end(avion);
 
 
-
-  // var avion = {};
-
-  // for (let i = 0; i <= aviones.length; i++) {
-  //   if (req.params.id = aviones[i]) {
-  //     avion = aviones[i];
-  //     i++
-  //   }
-  //   res.send(avion).status(404);  
+  // if(infoAviones[req.params.id]){
+  //   res.end(infoAviones[req.params.id]);
+  // } else {
+  //   res.end('404 xd')
   // }
 });
 
