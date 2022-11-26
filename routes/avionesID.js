@@ -4,14 +4,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {  
-    let Avi = Aviones[req.params.id + 1]   // http://localhost:3000/avionesID/*ID DE LO QUE SE BUSCA*
-    if(Avi){
-        res.send(Aviones[req.params.id])
-    }else {
-        res.end('ESE AVION NO SE ENCUENTRA')
-    }
-    
-
+    const id = req.params.id  // http://localhost:3000/avionesID/*ID DE LO QUE SE BUSCA*
+    const resultado = Aviones.id.filter()
 
 //     res.send((req,res)=>{
         
