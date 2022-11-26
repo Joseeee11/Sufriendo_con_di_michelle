@@ -20,4 +20,4 @@ let Aviones = [{
     Modelo:'7P3G'
   }]
   
-  module.exports = Aviones;  
+  module.exports.Aviones = Aviones;  

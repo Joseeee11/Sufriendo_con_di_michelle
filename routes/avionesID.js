@@ -1,11 +1,11 @@
-var Aviones = require('../Prueba_avion')
+const Avion = require('../Prueba_avion')
 var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {  
     const id = req.params.id  // http://localhost:3000/avionesID/*ID DE LO QUE SE BUSCA*
-    const resultado = Aviones.filter(Busco=>Busco.id === id)
+    const resultado = Avion.Aviones.filter(Encontrado => Encontrado.id === id)
     if (resultado.length === 0) {
         res.send(`No se logro encontrar ${id}`)
     }else{
