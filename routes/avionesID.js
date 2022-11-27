@@ -1,4 +1,4 @@
-const Aviones = require('../Prueba_avion')
+var Aviones = require('../Prueba_avion')
 var express = require('express');
 var router = express.Router();
 
