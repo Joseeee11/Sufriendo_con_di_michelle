@@ -5,6 +5,8 @@ const {trabajo} = require('../datosBD/info.js').infoMantenimiento;
 
 trabajoRouter.use(express.json());
 
+//Todo esto gracias al cursito de nodejs y express, agradecida con estefany
+
 //GET(). Para probar, usar los get del chinito
 //Ver (conseguir) todos los trabajos
 trabajoRouter.get('/', (req, res, next) => {
