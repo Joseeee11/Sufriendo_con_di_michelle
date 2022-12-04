@@ -8,6 +8,7 @@ trabajoRouter.use(express.json());
 //CONTROLADORES
 const actualizarTrabajo = require('../controladores/t.actualizar.js');
 const borrarTrabajo = require('../controladores/t.borrar.js');
+const crearTrabajo = require('../controladores/t.crear.js');
 
 //Todo esto gracias al cursito de nodejs y express, agradecida con estefany
 
@@ -40,11 +41,9 @@ trabajoRouter.delete('/:id', (req, res, next) => {
     borrarTrabajo.borrar(req, res, next);
 });
 
-//POST(). No le he hecho el controlador
+//POST(). Falta la actualización
 trabajoRouter.post('/', (req, res, next) => {
-    var nuevoTrabajo = req.body;
-    trabajo.push(nuevoTrabajo);
-    res.send(trabajo);
+    crearTrabajo.crear(req, res, next);
 });
 
 

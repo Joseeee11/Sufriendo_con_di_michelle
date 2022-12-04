@@ -8,6 +8,7 @@ equipoRouter.use(express.json());
 //CONTROLADORES
 const actualizarEquipo = require('../controladores/e.actualizar.js');
 const borrarEquipo = require('../controladores/e.borrar.js');
+const crearEquipo = require('../controladores/e.crear.js');
 
 //GET()
 equipoRouter.get('/', (req, res, next) => {
@@ -29,6 +30,11 @@ equipoRouter.put('/:id', (req, res, next) => {
 //DELETE()
 equipoRouter.delete('/:id', (req, res, next) => {
     borrarEquipo.borrar(req, res, next);
+});
+
+//POST(). No le he hecho el controlador
+equipoRouter.post('/', (req, res, next) => {
+    crearEquipo.crear(req, res, next);
 });
 
 

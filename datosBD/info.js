@@ -9,7 +9,7 @@ var infoMantenimiento = {
             'fechaInicialMarcha': '2020-11-12',
             'fechaUltimaMantenimiento': '2021-03-22',
             'fechaUltimaMarcha': '2022-10-10',
-            'marca' : 'cocacola',
+            'marca' : 'cocacola'
         },
         {
             'id': 2,
@@ -19,7 +19,7 @@ var infoMantenimiento = {
             'fechaInicialMarcha': '2020-09-22',
             'fechaUltimaMantenimiento': '2021-06-28',
             'fechaUltimaMarcha': '2022-02-23',
-            'marca' : 'apple',
+            'marca' : 'apple'
         },
         {
             'id': 3,
@@ -29,7 +29,7 @@ var infoMantenimiento = {
             'fechaInicialMarcha': '2010-04-10',
             'fechaUltimaMantenimiento': '2021-12-01',
             'fechaUltimaMarcha': '2022-01-01',
-            'marca' : 'casimiro',
+            'marca' : 'casimiro'
         },
         {
             'id': 4,
@@ -39,7 +39,7 @@ var infoMantenimiento = {
             'fechaInicialMarcha': '2000-02-12',
             'fechaUltimaMantenimiento': '2002-06-30',
             'fechaUltimaMarcha': '2018-05-31',
-            'marca' : 'apple',
+            'marca' : 'apple'
         },
         {
             'id': 5,
@@ -49,7 +49,7 @@ var infoMantenimiento = {
             'fechaInicialMarcha': '2008-07-26',
             'fechaUltimaMantenimiento': '2011-07-10',
             'fechaUltimaMarcha': '2020-01-20',
-            'marca' : 'casimiro',
+            'marca' : 'casimiro'
         }
     ],
     'trabajo' : [

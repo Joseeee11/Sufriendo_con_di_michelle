@@ -9,3 +9,18 @@ Content-Type: application/json
 
 ####
 DELETE http://localhost:3000/equipo/1 HTTP/1.1
+
+####
+POST http://localhost:3000/equipo HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 6,
+    "nombre" : "morat",
+    "descripcion" : "consejo de amor",
+    "serial": 456789,
+    "fechaInicialMarcha" : "2006-07-26",
+    "fechaUltimaMantenimiento" : "2011-08-23",
+    "fechaUltimaMarcha" : "2022-01-19",
+    "marca" : "xd"
+}
