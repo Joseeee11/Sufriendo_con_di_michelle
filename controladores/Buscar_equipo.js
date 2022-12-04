@@ -1,9 +1,10 @@
 class Equipos_get {
-    constructor(req,res,next,Equipo_BD){
+    constructor(req,res,next,Equipo_BD,Buscar){
     this.req=req
     this.res=res
     this.next=next
     this.Equipo_BD=Equipo_BD
+    this.Buscar=Buscar
     }
     Todos(req,res,next,Equipo){
         console.log(typeof Equipo)
@@ -18,5 +19,6 @@ class Equipos_get {
         res.send(resultado)
         }
     }
+    
 }
 module.exports = Equipos_get
