@@ -9,6 +9,7 @@ let resultado = new Buscar_equipo()
 
 /* RUTAS */
 router.get('/', function(req, res, next) {
+  console.log(Equipo_E);
   resultado.Todos(req,res,next,Equipo_E)
 });
 

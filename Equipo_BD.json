@@ -1,17 +1,22 @@
-{"Equipo":{
-    "":{
-    "Nombre":"chini",
-    "Descripcion":"Ingenieros en Computacion",
-    "Serial":"SV7S6",
-    "FechaInicialMarcha":"2004-04-23",
-    "UltimaPuestaMarcha":"2006-02-07",
-    "UltimoMantenimiento":"2003-09-29",
-    "id_Mantenimiento":1
-    }},
-"Mantenimiento":{
-    "id":1,
-    "FechaPlanificada":"2003-09-17",
-    "FechaInicio":"2003-09-29",
-    "FechaFinal":"2003-09-29",
-    "Estatus":"Terminado"
-}}
+{
+    "Equipo":{
+        
+            "Nombre":"chini",
+            "Descripcion":"Ingenieros en Computacion",
+            "Serial":"SV7S6",
+            "FechaInicialMarcha":"2004-04-23",
+            "UltimaPuestaMarcha":"2006-02-07",
+            "UltimoMantenimiento":"2003-09-29",
+            "id_Mantenimiento":1
+    
+    },
+    
+    "Mantenimiento":{
+        "id":1,
+        "FechaPlanificada":"2003-09-17",
+        "FechaInicio":"2003-09-29",
+        "FechaFinal":"2003-09-29",
+        "Estatus":"Terminado"
+    }
+    
+}
