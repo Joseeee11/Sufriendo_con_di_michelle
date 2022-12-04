@@ -14,8 +14,40 @@ router.get('/', function(req, res, next) {
 });
 
 // http://localhost:3000/avionesID/*ID DE LO QUE SE BUSCA*
-router.get('/:id', function(req, res, next) {  
-    resultado.BuscarPorID(req,res,next,Equipo_E)
+
+router.get('/BuscarNombre/:valor', function(req, res, next) {  
+  const elemento = 'Nombre'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarDescripcion/:valor', function(req, res, next) {  
+  const elemento = 'Descripción'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarSerial/:valor', function(req, res, next) {  
+  const elemento = 'Serial'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarFechaIM/:valor', function(req, res, next) {  
+  const elemento = 'FechaInicialMarcha'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarFechaUM/:valor', function(req, res, next) {  
+  const elemento = 'UltimaPuestaMarcha'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarUltimoMantenimiento/:valor', function(req, res, next) {  
+  const elemento = 'UltimoMantenimiento'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
+});
+
+router.get('/BuscarIdM/:valor', function(req, res, next) {  
+  const elemento = 'id_Mantenimiento'
+  resultado.BuscarPorCualquiera(req,res,next,Equipo_E,elemento)
 });
 
 

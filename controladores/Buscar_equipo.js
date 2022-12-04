@@ -1,24 +1,23 @@
 class Equipos_get {
-    constructor(req,res,next,Equipo_BD,Buscar){
+    constructor(req,res,next,Equipo_BD,buscar){
     this.req=req
     this.res=res
     this.next=next
     this.Equipo_BD=Equipo_BD
-    this.Buscar=Buscar
+    this.buscar=buscar
     }
     Todos(req,res,next,Equipo){
         console.log(typeof Equipo)
         res.send(JSON.stringify(Equipo));
     }
-    BuscarPorID(req,res,next,Equipo){
-        const id = Number(req.params.id)  
-        const resultado = Equipo.filter(Encontrado => Encontrado.id_Mantenimiento === id)
+
+    BuscarPorCualquiera(req,res,next,Equipo,buscar){
+        const valor = req.params.valor
+        const resultado = Equipo.filter(Encontrado => Encontrado[buscar] == valor)
         if (resultado.length === 0) {
-        res.send(`No se logro encontrar ${id}`)
+        res.send(`No se logro encontrar ${valor}`)
         }else{
         res.send(resultado)
-        }
-    }
-    
+        }}
 }
 module.exports = Equipos_get
