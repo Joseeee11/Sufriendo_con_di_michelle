@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var trabajoRouter = require('./routes/trabajosR.js');
-var equipoRouter = require('./routes/equiposR.js');
+var trabajoRouter = require('./routes/trabajos.r.js');
+var equipoRouter = require('./routes/equipos.r.js');
 
 
 

@@ -1,9 +1,13 @@
 const express = require('express');
 const trabajoRouter = express.Router();
 
+//DATOS
 const {trabajo} = require('../datosBD/info.js').infoMantenimiento;
-
 trabajoRouter.use(express.json());
+
+//CONTROLADORES
+const actualizarTrabajo = require('../controladores/t.actualizar.js');
+const borrarTrabajo = require('../controladores/t.borrar.js');
 
 //Todo esto gracias al cursito de nodejs y express, agradecida con estefany
 
@@ -26,15 +30,9 @@ trabajoRouter.get('/:estatusMantenimiento', (req, res, next) => {
 
 //BASE PARA HACER LOS CONTROLADORES CON CLASES Y FUNCIONES
 //PUT(). Actualizar trabajos, recordemos que para actualizar en PUT, apesar de que se modifique una propiedad el cuerpo debe contener la entidad completa
-trabajoRouter.put('/:id', (req, res, next) => { //es necesario el id, para saber que trabajo en especifico se modificará
-    var i = trabajo.findIndex(t => t.id == req.params.id); //el .findIndex nos permite econtrar el indice de un elemento en un arreglo; así el conteo desde 0 de un arreglo no nos afectara en la comparación
-    if (i >= 0) { //si  t.id == req.params.id da false, i retornara -1
-        trabajo[i] = req.body;
-    } else {
-        return res.status(404).send(`No se encuentra el trabajo ${req.params.id} que se desea modificar.`);
-    }
-    res.send(trabajo);
-}); //funciona :D
+trabajoRouter.put('/:id', (req, res, next) => {
+    actualizarTrabajo.actualizar(req,res,next);
+}); //funciona :D. Actualización: Sufriendo desde las una con estas pinchis clases y llamados a las clases, error y error hasta ahorita 4:11 a.m :"D
 
 //PATCH(). Actualizar trabajos en propiedades específicas, sin necesidad de que el cuerpo de la solicitud contenga toda la entidad
 trabajoRouter.patch('/:id', (req, res, next) => {
@@ -51,13 +49,7 @@ trabajoRouter.patch('/:id', (req, res, next) => {
 
 //DELETE()
 trabajoRouter.delete('/:id', (req, res, next) => {
-    var i = trabajo.findIndex(t => t.id == req.params.id);
-    if (i >= 0) {
-        trabajo.splice(i, 1); //permite borrar uno o mas elementos de un array
-    } else {
-        return res.status(404).send(`No se encuentra el trabajo ${req.params.id} que se desea eliminar.`);
-    }
-    res.send(trabajo);
+    borrarTrabajo.borrar(req, res, next);
 });
 
 //POST(). muestra un array vacio :c ahora veo porque

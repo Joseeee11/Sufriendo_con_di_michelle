@@ -1,0 +1,16 @@
+PUT http://localhost:3000/equipo/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "nombre" : "pepito",
+    "descripcion" : "equipo reparado xd",
+    "serial": 183333,
+    "fechaInicialMarcha": "2020-11-12",
+    "fechaUltimaMantenimiento": "2021-03-22",
+    "fechaUltimaMarcha": "2022-10-10",
+    "marca" : "cocacola"
+}
+
+####
+DELETE http://localhost:3000/equipo/1 HTTP/1.1
