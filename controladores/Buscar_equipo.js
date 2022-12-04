@@ -11,7 +11,7 @@ class Equipos_get {
     }
     BuscarPorID(req,res,next,Equipo){
         const id = Number(req.params.id)  
-        const resultado = Equipo.filter(Encontrado => Encontrado.id === id)
+        const resultado = Equipo.filter(Encontrado => Encontrado.id_Mantenimiento === id)
         if (resultado.length === 0) {
         res.send(`No se logro encontrar ${id}`)
         }else{

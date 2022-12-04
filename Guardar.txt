@@ -1,4 +1,4 @@
-{"Equipo":{
+{"Equipo":[{
     
     "Nombre":"chini",
     "Descripcion":"Ingenieros en Computacion",
@@ -7,11 +7,55 @@
     "UltimaPuestaMarcha":"2006-02-07",
     "UltimoMantenimiento":"2003-09-29",
     "id_Mantenimiento":1
-    },
-"Mantenimiento":{
+    }],
+"Mantenimiento":[{
     "id":1,
     "FechaPlanificada":"2003-09-17",
     "FechaInicio":"2003-09-29",
     "FechaFinal":"2003-09-29",
     "Estatus":"Terminado"
-}}
+}]}
+
+
+{
+    "Equipo":[{
+        "id":1,
+        "titulo":"Aprende Python",
+        "lenguaje":"python",
+        "vistas":15000,
+        "nivel":"basico"
+        },{
+        "id":2,
+        "titulo":"Python intermedio",
+        "lenguaje":"python",
+        "vistas":13568,
+        "nivel":"intermedio"
+         },{
+        "id":3,
+        "titulo":"Aprende JavaScript",
+        "lenguaje":"javascript",
+        "vistas":1231012,
+        "nivel":"basico"
+        }
+    ],
+    "Mantenimiento":[{
+        "id":1,
+        "titulo":"Aprende Calculo",
+        "tema":"calculo",
+        "vistas":12427,
+        "nivel":"basico"
+        },{
+        "id":2,
+        "titulo":"Aprende Algebra",
+        "tema":"algebra",
+        "vistas":21325,
+        "nivel":"intermedio"
+        },{
+        "id":1,
+        "titulo":"Aprende Larry",
+        "tema":"loqueras",
+        "vistas":666,
+        "nivel":"nasa"
+        }
+    ]
+}
