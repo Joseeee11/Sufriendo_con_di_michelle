@@ -2,18 +2,6 @@ PUT http://localhost:3000/trabajo/2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "id" : 2,
-    "estatusMantenimiento": "terminado",
-    "fechaPlanificadaMantenimiento" : "2021-08-09",
-    "fechaInicialMantenimiento": "2022-10-09",
-    "fechaFinalMantenimiento": "2022-11-28"
-}
-
-####
-PATCH http://localhost:3000/trabajo/2 HTTP/1.1
-Content-Type: application/json
-
-{
     "estatusMantenimiento": "terminado",
     "fechaInicialMantenimiento": "2021-12-12"
 }
@@ -22,11 +10,7 @@ Content-Type: application/json
 DELETE http://localhost:3000/trabajo/2 HTTP/1.1
 
 ####
-DELETE http://localhost:3000/equipo/1 HTTP/1.1
-
-####
 POST http://localhost:3000/trabajo HTTP/1.1
-
 Content-Type: application/json
 
 {
