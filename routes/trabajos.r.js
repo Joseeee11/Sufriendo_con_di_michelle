@@ -17,17 +17,13 @@ const actualizar = new actualizarAmbos();
 const borrar = new borrarAmbos();
 const crear = new crearAmbos();
 
-
-
 //Todo esto gracias al cursito de nodejs y express, agradecida con estefany
 
 //GET(). Para probar, usar los get del chinito
-//Ver (conseguir) todos los trabajos
 trabajoRouter.get('/', (req, res, next) => {
     res.send(trabajo);
 });
-
-//Ver trabajos por estatus
+    //Ver trabajos por estatus
 trabajoRouter.get('/:estatusMantenimiento', (req, res, next) => {
     const estatus = req.params.estatusMantenimiento; //resumir nombre x"d
     var resultado = trabajo.filter(t => t.estatusMantenimiento === estatus);
@@ -37,23 +33,19 @@ trabajoRouter.get('/:estatusMantenimiento', (req, res, next) => {
     res.send(resultado);
 });
 
-
-//BASE PARA HACER LOS CONTROLADORES CON CLASES Y FUNCIONES
 //PUT(). Actualizar trabajos.
 trabajoRouter.put('/:id', (req, res, next) => {
     actualizar.actuTrabajo(req, res, next, trabajo);
 }); //funciona :D. Actualización: Sufriendo desde las una con estas pinchis clases y llamados a las clases, error y error hasta ahorita 4:11 a.m :"D
-
 
 //DELETE()
 trabajoRouter.delete('/:id', (req, res, next) => {
     borrar.borrarTrabajo(req, res, next, trabajo);
 });
 
-//POST(). Falta la actualización
+//POST()
 trabajoRouter.post('/', (req, res, next) => {
     crear.crearTrabajo(req, res, next, trabajo, equipo, actualizar);
 });
-
 
 module.exports = trabajoRouter;

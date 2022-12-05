@@ -43,8 +43,4 @@ equipoRouter.post('/', (req, res, next) => {
     crear.crearEquipo(req, res, next, equipo);
 });
 
-
-
-
-
 module.exports = equipoRouter;
