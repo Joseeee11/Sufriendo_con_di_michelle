@@ -9,6 +9,8 @@ trabajoRouter.use(express.json());
 const actualizarTrabajo = require('../controladores/t.actualizar.js');
 const borrarTrabajo = require('../controladores/t.borrar.js');
 const crearTrabajo = require('../controladores/t.crear.js');
+const actualizarEquipo = require('../controladores/e.actualizar.js');
+
 
 //Todo esto gracias al cursito de nodejs y express, agradecida con estefany
 
@@ -43,6 +45,7 @@ trabajoRouter.delete('/:id', (req, res, next) => {
 
 //POST(). Falta la actualización
 trabajoRouter.post('/', (req, res, next) => {
+    actualizarEquipo.ultimoMantenimiento(req, res, next);
     crearTrabajo.crear(req, res, next);
 });
 
