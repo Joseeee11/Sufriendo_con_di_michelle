@@ -104,4 +104,4 @@ var infoMantenimiento = {
     ]
 };
 
-module.exports.infoMantenimiento = infoMantenimiento;
+module.exports = infoMantenimiento;

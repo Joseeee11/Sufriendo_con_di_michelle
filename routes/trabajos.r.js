@@ -2,13 +2,20 @@ const express = require('express');
 const trabajoRouter = express.Router();
 
 //DATOS
-const {trabajo} = require('../datosBD/info.js').infoMantenimiento;
+const infoMantenimiento = require('../datosBD/BD.js');
 trabajoRouter.use(express.json());
 
+const trabajo = infoMantenimiento.trabajo
+const equipo = infoMantenimiento.equipo
+
 //CONTROLADORES
-const actualizarTrabajo = require('../controladores/t.actualizar.js');
-const borrarTrabajo = require('../controladores/t.borrar.js');
-const crearTrabajo = require('../controladores/t.crear.js');
+const actualizarAmbos = require('../controladores/actualizar.c.js');
+const borrarAmbos = require('../controladores/borrar.c.js');
+const crearAmbos = require('../controladores/crear.c.js');
+
+const actualizar = new actualizarAmbos();
+const borrar = new borrarAmbos();
+const crear = new crearAmbos();
 
 
 
@@ -34,18 +41,18 @@ trabajoRouter.get('/:estatusMantenimiento', (req, res, next) => {
 //BASE PARA HACER LOS CONTROLADORES CON CLASES Y FUNCIONES
 //PUT(). Actualizar trabajos.
 trabajoRouter.put('/:id', (req, res, next) => {
-    actualizarTrabajo.actualizar(req,res,next);
+    actualizar.actuTrabajo(req, res, next, trabajo);
 }); //funciona :D. Actualización: Sufriendo desde las una con estas pinchis clases y llamados a las clases, error y error hasta ahorita 4:11 a.m :"D
 
 
 //DELETE()
 trabajoRouter.delete('/:id', (req, res, next) => {
-    borrarTrabajo.borrar(req, res, next);
+    borrar.borrarTrabajo(req, res, next, trabajo);
 });
 
 //POST(). Falta la actualización
 trabajoRouter.post('/', (req, res, next) => {
-    crearTrabajo.crear(req, res, next);
+    crear.crearTrabajo(req, res, next, trabajo, equipo, actualizar);
 });
 
 

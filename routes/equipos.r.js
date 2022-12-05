@@ -2,13 +2,19 @@ const express = require('express');
 const equipoRouter = express.Router();
 
 //DATOS
-const {equipo} = require('../datosBD/info.js').infoMantenimiento;
 equipoRouter.use(express.json());
+const infoMantenimiento = require('../datosBD/BD.js');
+const equipo = infoMantenimiento.equipo;
 
 //CONTROLADORES
-const actualizarEquipo = require('../controladores/e.actualizar.js');
-const borrarEquipo = require('../controladores/e.borrar.js');
-const crearEquipo = require('../controladores/e.crear.js');
+const actualizarAmbos = require('../controladores/actualizar.c.js');
+const borrarAmbos = require('../controladores/borrar.c.js');
+const crearAmbos = require('../controladores/crear.c.js');
+
+const actualizar = new actualizarAmbos();
+const borrar = new borrarAmbos();
+const crear = new crearAmbos();
+
 
 //GET()
 equipoRouter.get('/', (req, res, next) => {
@@ -24,17 +30,17 @@ equipoRouter.get('/:nombre', (req, res, next) => {
 
 //PUT()
 equipoRouter.put('/:id', (req, res, next) => {
-    actualizarEquipo.actualizar(req, res, next);
+    actualizar.actuEquipo(req, res, next, equipo);
 });
 
 //DELETE()
 equipoRouter.delete('/:id', (req, res, next) => {
-    borrarEquipo.borrar(req, res, next);
+    borrar.borrarEquipo(req, res, next, equipo);
 });
 
 //POST(). No le he hecho el controlador
 equipoRouter.post('/', (req, res, next) => {
-    crearEquipo.crear(req, res, next);
+    crear.crearEquipo(req, res, next, equipo);
 });
 
 
