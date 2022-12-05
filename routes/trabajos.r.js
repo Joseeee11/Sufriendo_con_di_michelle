@@ -50,8 +50,4 @@ trabajoRouter.post('/', (req, res, next) => {
 });
 
 
-
-
-
-
 module.exports = trabajoRouter;

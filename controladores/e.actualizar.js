@@ -12,7 +12,6 @@ class actualizarEquipo {
         res.send(equipo);
     }
     ultimoMantenimiento(req) {
-        var nuevoTrabajo = req.body;
         var i = equipo.findIndex(e => e.id == req.body.idEquipo);
         if (i >= 0) {
             var equipoActualizado = equipo[i];
