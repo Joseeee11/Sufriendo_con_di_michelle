@@ -45,7 +45,7 @@ trabajoRouter.delete('/:id', (req, res, next) => {
 
 //POST(). Falta la actualización
 trabajoRouter.post('/', (req, res, next) => {
-    actualizarEquipo.ultimoMantenimiento(req, res, next);
+    actualizarEquipo.ultimoMantenimiento(req);
     crearTrabajo.crear(req, res, next);
 });
 
