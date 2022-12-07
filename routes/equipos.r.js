@@ -3,8 +3,8 @@ const equipoRouter = express.Router();
 
 //DATOS
 equipoRouter.use(express.json());
-const infoMantenimiento = require('../datosBD/BD.js');
-const equipo = infoMantenimiento.equipo;
+const BD = require('../datosBD/BD.json');
+const equipo = BD.Equipo;
 
 //CONTROLADORES
 const actualizarAmbos = require('../controladores/actualizar.c.js');
@@ -21,9 +21,9 @@ equipoRouter.get('/', (req, res, next) => {
     res.send(equipo);
 });
 equipoRouter.get('/:nombre', (req, res, next) => { 
-    var resultado = equipo.filter(t => t.nombre === req.params.nombre);
+    var resultado = equipo.filter(t => t.Nombre === req.params.Nombre);
     if(resultado.length === 0) {
-        return res.status(404).send(`no hay equipos en este estado: ${req.params.nombre}`);
+        return res.status(404).send(`no hay equipos en este estado: ${req.params.Nombre}`);
     }
     res.send(resultado);
 });

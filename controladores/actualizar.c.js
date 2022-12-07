@@ -21,13 +21,13 @@ class actualizarAmbos {
         res.send(equipo);
     };
     ultimoMantenimiento(req, equipo) {
-        var i = equipo.findIndex(e => e.id == req.body.idEquipo);
+        var i = equipo.findIndex(e => e.id == req.body.id_Equipo);
         if (i >= 0) {
             var equipoActualizado = equipo[i];
-            equipoActualizado.fechaUltimaMantenimiento = req.body.fechaFinalMantenimiento
+            equipoActualizado.UltimoMantenimiento = req.body.FechaFinal
             console.log(equipoActualizado);
         } else {
-            return console.log(`No se encuentra el equipo ${req.body.idEquipo} que se desea actualizar.`);
+            return console.log(`No se encuentra el equipo ${req.body.id_Equipo} que se desea actualizar.`);
         }
         console.log(equipo);
     }

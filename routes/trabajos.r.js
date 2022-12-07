@@ -2,11 +2,11 @@ const express = require('express');
 const trabajoRouter = express.Router();
 
 //DATOS
-const infoMantenimiento = require('../datosBD/BD.js');
+const BD = require('../datosBD/BD.json');
 trabajoRouter.use(express.json());
 
-const trabajo = infoMantenimiento.trabajo
-const equipo = infoMantenimiento.equipo
+const trabajo = BD.Mantenimiento
+const equipo = BD.Equipo
 
 //CONTROLADORES
 const actualizarAmbos = require('../controladores/actualizar.c.js');
@@ -24,9 +24,9 @@ trabajoRouter.get('/', (req, res, next) => {
     res.send(trabajo);
 });
     //Ver trabajos por estatus
-trabajoRouter.get('/:estatusMantenimiento', (req, res, next) => {
-    const estatus = req.params.estatusMantenimiento; //resumir nombre x"d
-    var resultado = trabajo.filter(t => t.estatusMantenimiento === estatus);
+trabajoRouter.get('/:Estatus', (req, res, next) => {
+    const estatus = req.params.Estatus; //resumir nombre x"d
+    var resultado = trabajo.filter(t => t.Estatus === estatus);
     if(resultado.length === 0) {
         return res.status(404).send(`no hay trabajos en este estado: ${estatus}`);
     }
